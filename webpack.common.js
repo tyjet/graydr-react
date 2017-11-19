@@ -1,6 +1,3 @@
-/*
-    ./webpack.config.js
-*/
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,20 +6,14 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 })
+const CleanWebpackPlugin =require('clean-webpack-plugin');
+const CleanWebpackPluginConfig = new CleanWebpackPlugin(['dist']);
 
 module.exports = {
   entry: './app/index.js',
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    compress: true,
-    contentBase: './dist',
-    historyApiFallback: true,
-    noInfo: true,
-    port: 3100
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -41,5 +32,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [CleanWebpackPluginConfig, HtmlWebpackPluginConfig]
 }

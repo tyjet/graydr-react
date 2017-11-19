@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    image: dynaer/graydr-react:develop
+    ports:
+      - "3100:3100"
+    volumes:
+      - graydr-modules:/graydr/node_modules
+      - ${PWD}:/graydr/
+    working_dir: /graydr
+
+volumes:
+  graydr-modules:
