@@ -1,17 +1,12 @@
 // Karma configuration
 // Generated on Sat Nov 18 2017 14:20:16 GMT-0500 (EST)
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js')
+const webpackConfig = require('./webpack.dev.js');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
-    browsers: [ 'Chrome' ],
-    colors: true
-
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -30,7 +25,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'tests_entry.js': [ 'webpack', 'sourcemap' ]
+      'tests_entry.js': ['webpack', 'sourcemap'],
     },
 
 
@@ -41,7 +36,7 @@ module.exports = function(config) {
 
     coverageReporter: {
       dir: 'coverage/',
-      type: 'html'
+      type: 'html',
     },
 
     // web server port
@@ -53,7 +48,8 @@ module.exports = function(config) {
 
 
     // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR ||
+    // config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
 
@@ -65,11 +61,6 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
-    jasmineDiffReporter: {
-      pretty: true,
-      multiline: false,
-      verbose: false
-    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -82,11 +73,11 @@ module.exports = function(config) {
     webpack: webpackConfig,
 
     webpackMiddleware: {
-    stats: 'errors-only',
+      stats: 'errors-only',
     },
 
     webpackServer: {
-      noInfo: true
-    }
-  })
-}
+      noInfo: true,
+    },
+  });
+};
