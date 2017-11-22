@@ -13,6 +13,7 @@ const publicPath = express.static(path.join(__dirname, '../dist'))
 
 app.use(publicPath)
 app.get('/', function (_, res) { res.sendFile(indexPath) })
+app.get('/.well-known/acme-challenge/Pw949ZGbMG6jqmrxl7NY2OzbZdjikRekTL61BpIKWeM', function (_, res) { res.send('Pw949ZGbMG6jqmrxl7NY2OzbZdjikRekTL61BpIKWeM.oDxjYQTlNZeMmPaxPcCS0vfu0bq8ea2SWxBqahXFsbM') })
 
 app.listen(port)
 console.log(`Listening at http://localhost:${port}`)
