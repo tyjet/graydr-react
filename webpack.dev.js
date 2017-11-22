@@ -9,6 +9,6 @@ module.exports = merge(common, {
     historyApiFallback: true,
     host: '0.0.0.0',
     noInfo: true,
-    port: 3100
+    port: 3100,
   },
 });

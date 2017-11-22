@@ -12,7 +12,7 @@
     "precommit": "lint-staged",
     "start": "webpack-dev-server --config webpack.dev.js --progress",
     "start:prod": "yarn build && NODE_ENV=production node ./server/index.js",
-    "test": "karma start"
+    "test": "xvfb-run karma start"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint"

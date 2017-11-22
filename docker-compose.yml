@@ -6,9 +6,9 @@ services:
     ports:
       - "3100:3100"
     volumes:
-      - graydr-modules:/graydr/node_modules
-      - ${PWD}:/graydr/
-    working_dir: /graydr
+      - .:/home/drgray/graydr
+      - graydr-modules:/home/drgray/node_modules
+    working_dir: /home/drgray/graydr
 
 volumes:
   graydr-modules:
