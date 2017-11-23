@@ -20,7 +20,8 @@ module.exports = {
     filename: 'index_bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    modules: ['./node_modules', './app'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   module: {
     rules: [
