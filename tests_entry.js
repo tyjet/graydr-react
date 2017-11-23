@@ -1,4 +1,4 @@
-//make sure you have your directory and regex test set correctly!
+// Make sure you have your directory and regex test set correctly!
 const context = require.context('./tests', true, /-test\.jsx?$/);
 context.keys().forEach(context);
 
